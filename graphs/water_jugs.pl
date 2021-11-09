@@ -17,9 +17,9 @@ search(CurrentState, CurrentPath, Path):-
 
 You need to get 8 liter of water from a river. 
 You only have a 15-liter jug and a 16-liter jug. 
-How can you obtain 8 liter using only these two jugs ?
+How can you obtain 8 liter using only these two jugs?
 Possible operations are: 
-- emptying a jug entirely, 
+- emptying a jug entirely
 - filling a jug entirely
 - emptying one jug into the other
 
