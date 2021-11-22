@@ -6,7 +6,7 @@ The system should specify whether the given bottle is from farmer 1, 2 or 3.
 As input, I am using numerical data for single bottles.
 These are lists with 13 numbers representing various properties of the single bottle. */
 
-/* Implement min_list and distance predicates predicates */
+/* Implement min_list and distance predicates */
 
 min_list([A], A).
 min_list([A, B], A):- A < B.
