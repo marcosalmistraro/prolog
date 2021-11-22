@@ -77,6 +77,13 @@ solve():-
     (S4 in {1, 4, 5}, V4 #= 5);
     (S5 in {1, 4, 5}, V5 #= 5)),
 
+    labeling([], 
+        [N1, S1, V1, 
+        N2, S2, V2, 
+        N3, S3, V3,
+        N4, S4, V4,
+        N5, S5, V5]),
+
     write('Student1 = '), write('[ '), write(N1), tab(1), write(S1), tab(1), write(V1), write(' ]'), nl,
     write('Student2 = '), write('[ '), write(N2), tab(1), write(S2), tab(1), write(V2), write(' ]'), nl,
     write('Student3 = '), write('[ '), write(N3), tab(1), write(S3), tab(1), write(V3), write(' ]'), nl,
