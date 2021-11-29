@@ -1,4 +1,5 @@
 /*
+
 The following program solves a given 9x9 sudoku puzzle.
 Alternative solutions are given if available; in case the puzzle is not solvable the system fails.
 An example query to be asked via the Prolog prompt is the following; this will generate one unique solution.
