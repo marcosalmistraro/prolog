@@ -5,9 +5,11 @@ taken as part of my Advanced Master's in AI at KU Leuven.
 
 Among others, some key concepts I have explored here are:
 
-- Binary Trees
-- Constraint Logic Programming
+- Accumulators
+- Binary trees
+- Constraint logic programming (CLP)
 - Declarative and procedural meanings in Prolog
-- General Prolog Syntax
+- General prolog syntax
 - Generate-and-test patterns
 - List manipulation
+- Reification (conversion of value tests into booleans)
