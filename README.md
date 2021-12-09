@@ -11,5 +11,6 @@ Among others, some key concepts I have explored here are:
 - Declarative and procedural meanings in Prolog
 - General prolog syntax
 - Generate-and-test patterns
+- Heuristic functions
 - List manipulation
 - Reification (conversion of value tests into booleans)
