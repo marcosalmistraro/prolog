@@ -8,7 +8,9 @@ Among others, some key concepts I have explored here are:
 - Accumulators
 - Binary trees
 - Constraint logic programming (CLP)
+- Definite clause grammar (DCG)
 - Declarative and procedural meanings in Prolog
+- Difference lists
 - General prolog syntax
 - Generate-and-test patterns
 - Heuristic functions
