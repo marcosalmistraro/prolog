@@ -8,10 +8,8 @@ sentence(Converted) --> number(ConvertedD), number(ConvertedU),
                     {Converted is ConvertedD + ConvertedU}.
 sentence(Converted) --> number(ConvertedH), [hundred],
                     {Converted is ConvertedH * 100}.
-
 sentence(Converted) --> number(ConvertedH), [hundred], number(ConvertedD), number(ConvertedU),
                     {compute_hundreds(ConvertedH, ConvertedD, ConvertedU, Converted)}.
-
 sentence(Converted) --> number(ConvertedH), [hundred], number(ConvertedDU),
                     {compute_hundreds(ConvertedH, ConvertedDU, Converted)}.
 
