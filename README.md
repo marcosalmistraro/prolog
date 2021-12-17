@@ -11,6 +11,7 @@ Among others, some key concepts I have explored here are:
 - Definite clause grammar (DCG)
 - Declarative and procedural meanings in Prolog
 - Difference lists
+- Failure-driven loops
 - General prolog syntax
 - Generate-and-test patterns
 - Heuristic functions
