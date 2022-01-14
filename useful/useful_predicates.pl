@@ -34,6 +34,14 @@ my_maplist(Func, [H]):-
 my_maplist(Func, [H|T]):-
     F =.. [Func, H], F,
     my_maplist(Func, T), !.
+
+my_maplist(Func, [H], [Res]):-
+    F =.. [Func, H, Res],
+    F, !.
+
+my_maplist(Func, [H|T], [Res|Rest]):-
+    F =.. [Func, H, Res], F,
+    my_maplist(Func, T, Rest), !.
   
 my_not(P):-
     P, !, 
