@@ -26,6 +26,14 @@ my_include(Func, [H|T], [H|Res]):-
 
 my_include(Func, [_|T], Res):-
     my_include(Func, T, Res).
+
+my_maplist(Func, [H]):-
+    F =.. [Func, H],
+    F, !.
+
+my_maplist(Func, [H|T]):-
+    F =.. [Func, H], F,
+    my_maplist(Func, T), !.
   
 my_not(P):-
     P, !, 
