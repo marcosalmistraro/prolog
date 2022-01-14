@@ -48,3 +48,6 @@ my_not(P):-
     fail
     ; 
     true.
+
+my_once(P):-
+    P, !.
