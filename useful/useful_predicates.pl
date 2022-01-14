@@ -52,6 +52,11 @@ my_not(P):-
 my_once(P):-
     P, !.
 
+my_select(X, [X], []).
+my_select(X, [X|T], T).
+my_select(X, [H|T], [H|Res]):-
+    my_select(X, T, Res).
+
 permutations([H], [H]).
 permutations([H|T], Perm):-
     permutations(T, TmpPerm),
