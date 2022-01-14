@@ -26,3 +26,9 @@ my_include(Func, [H|T], [H|Res]):-
 
 my_include(Func, [_|T], Res):-
     my_include(Func, T, Res).
+  
+my_not(P):-
+    P, !, 
+    fail
+    ; 
+    true.
