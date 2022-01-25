@@ -7,9 +7,9 @@ There are 9 digits in total, they are all different and all in the range 1..9.
 - The sum of the 2nd, 3th and 6th digit is less than the 8th digit, 
 - The last digit is less than the 8th digit. 
 
-The program uses CLP in order to find the solution */
+The program uses CLPFD in order to find the solution */
 
-:- use_module(library(clpr)).
+:- use_module(library(clpfd)).
 
 solve():-
     [A, B, C, D, E, F, G, H, I] ins 1..9,
