@@ -13,36 +13,24 @@ distance(b, a, 3).
 distance(d, e, 9).
 distance(c, b, 10).
 
-costBus([stop(_, _)], 0).
+costBus(Cities, Cost):-
+    findall(stop(City, _), (member(City, Cities)), Stops),
+    getCost(Stops, Cost).
 
-costBus(Tour, Cost):-
-    Tour = [stop(Stop1, _), stop(Stop2, _)],
-    distance(Stop1, Stop2, Cost), !.
+getCost([_], 0).
 
-costBus(Tour, Cost):-
-    Tour = [stop(Stop1, _), stop(Stop2, _)],
-    distance(Stop2, Stop1, Cost), !.
+getCost([stop(Stop1, _), stop(Stop2, _)], Cost):-
+    distance(Stop1, Stop2, Cost).
 
-costBus(Tour, Cost):-
-    Tour = [stop(Stop1, _), stop(Stop2, _)|T],
+getCost([stop(Stop1, _), stop(Stop2, _)], Cost):-
+    distance(Stop2, Stop1, Cost).
+
+getCost([stop(Stop1, _), stop(Stop2, _)|T], Cost):-
     distance(Stop1, Stop2, TmpCost),
-    costBus([stop(Stop2, _)|T], FutureCost),
-    Cost is TmpCost + FutureCost, !.
-
-costBus(Tour, Cost):-
-    Tour = [stop(Stop1, _), stop(Stop2, _)|T],
-    distance(Stop1, Stop2, TmpCost),
-    costBus([stop(Stop1, _)|T], FutureCost),
-    Cost is TmpCost + FutureCost, !.
-
-costBus(Tour, Cost):-
-    Tour = [stop(Stop1, _), stop(Stop2, _)|T],
+    getCost([stop(Stop2, _)|T], FutureCost),
+    Cost is TmpCost + FutureCost.
+    
+getCost([stop(Stop1, _), stop(Stop2, _)|T], Cost):-
     distance(Stop2, Stop1, TmpCost),
-    costBus([stop(Stop1, _)|T], FutureCost),
-    Cost is TmpCost + FutureCost, !.
-
-costBus(Tour, Cost):-
-    Tour = [stop(Stop1, _), stop(Stop2, _)|T],
-    distance(Stop2, Stop1, TmpCost),
-    costBus([stop(Stop2, _)|T], FutureCost),
-    Cost is TmpCost + FutureCost, !.
+    getCost([stop(Stop2, _)|T], FutureCost),
+    Cost is TmpCost + FutureCost.
