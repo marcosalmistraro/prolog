@@ -64,3 +64,5 @@ anticlockwise(Tuple, Inverted):-
 inverse_acc([], Acc, Acc).
 inverse_acc([H|T], Acc, Inverted):-
     inverse_acc(T, [H|Acc], Inverted).
+
+% left to be implemented: check for variants
