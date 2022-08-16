@@ -14,31 +14,30 @@ length_list_acc([_|T], Acc, Length):-
     Acc1 is Acc + 1,
     length_list_acc(T, Acc1, Length).
    
-my_include(Func, [H], Res):-
-    F =.. [Func, H],
-    (F -> [H] = Res
-    ;
-    [] = Res).
-
+my_include(Func, [H], [H]):-
+    Goal =.. [Func, H],
+    Goal.
+my_include(Func, [H], []):-
+    Goal =.. [Func, H],
+    not(Goal).
 my_include(Func, [H|T], [H|Res]):-
-    F =.. [Func, H], F,
+    Goal =.. [Func, H],
+    Goal,
     my_include(Func, T, Res).
-
-my_include(Func, [_|T], Res):-
+my_include(Func, [H|T], Res):-
+    Goal =.. [Func, H],
+    not(Goal),
     my_include(Func, T, Res).
 
 my_maplist(Func, [H]):-
     F =.. [Func, H],
     F, !.
-
 my_maplist(Func, [H|T]):-
     F =.. [Func, H], F,
     my_maplist(Func, T), !.
-
 my_maplist(Func, [H], [Res]):-
     F =.. [Func, H, Res],
     F, !.
-
 my_maplist(Func, [H|T], [Res|Rest]):-
     F =.. [Func, H, Res], F,
     my_maplist(Func, T, Rest), !.
