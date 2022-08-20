@@ -1,12 +1,9 @@
-/* 
-Using CLPFD to solve a CLP problem
+/* Using CLPFD to solve a CLP problem
 
 Names       1. Sarah    2. Rachel   3. Melony   4. Amelia   5. Julia
 Surnames    1. Sanford  2. Travers  3. James    4. West     5. Couch
 Colors      1. Red      2. White    3. Yellow   4. Black    5. Blue
-Piece       1. One      2. One      3. One      4. Two      5. Two
-
-*/
+Piece       1. One      2. One      3. One      4. Two      5. Two */
 
 :- use_module(library(clpfd)).
 

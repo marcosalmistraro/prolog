@@ -7,4 +7,4 @@ is_balanced(t(L, _, R)):-
     depth(R, DepthR),
     abs(DepthR - DepthL) =< 1,
     is_balanced(L),
-    is_balanced(R), !.
+    is_balanced(R).

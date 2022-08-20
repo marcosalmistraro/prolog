@@ -41,8 +41,7 @@ valid_state([jug15(Content1), jug16(Content2)]):-
     Content2 >= 0,
     Content2 =< 16.
 
-/* Transfer jug1 into jug2 */
-
+% Transfer jug1 into jug2
 try_action([jug15(Content1), jug16(Content2)], NextState):-
     Content1 > (16 - Content2),
     AmountTransfer is abs(16 - Content2),
@@ -73,23 +72,19 @@ try_action([jug15(Content1), jug16(Content2)], NextState):-
     NewContent2 is Content2 - AmountTransfer,
     NextState = [jug15(NewContent1), jug16(NewContent2)].
 
-/* Emptying jug1 entirely */
-
+% Emptying jug1 entirely
 try_action([jug15(_), jug16(Content2)], NextState):-
     NextState = [jug15(0), jug16(Content2)].
 
-/* Emptying jug2 entirely */
-
+% Emptying jug2 entirely
 try_action([jug15(Content1), jug16(_)], NextState):-
     NextState = [jug15(Content1), jug16(0)].
 
-/* Filling jug1 entirely */
-
+% Filling jug1 entirely
 try_action([jug15(_), jug16(Content2)], NextState):-
     NextState = [jug15(15), jug16(Content2)].
 
-/* Filling jug2 entirely */
-
+% Filling jug2 entirely
 try_action([jug15(Content1), jug16(_)], NextState):-
     NextState = [jug15(Content1), jug16(16)].
 

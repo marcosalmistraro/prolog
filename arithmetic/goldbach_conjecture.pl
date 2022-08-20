@@ -1,5 +1,4 @@
-/* 
-Goldbach's conjecture says that every positive even number greater than 2 
+/* Goldbach's conjecture says that every positive even number greater than 2 
 is the sum of two prime numbers. As an example: 28 = 5 + 23. 
 Although it has not been proved to be correct in the general case, it has been numerically confirmed up to very large numbers. 
 The predicate finds all combinations of two prime numbers that sum up to a given even integer. */
@@ -41,7 +40,7 @@ generate_numbers_with_bounds(N, [N|T]):-
 % goldbach's conjecture only applies to even integers
 goldbach(N, _):-
     not(is_even(N)),
-    write("Goldbach's conjecture only applies to even integers"), !.
+    write('The conjecture only applies to even integers'), !.
 
 % goldbach conjecture in action
 goldbach(N, [A, B]):-

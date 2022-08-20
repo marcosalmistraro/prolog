@@ -1,10 +1,8 @@
-/* 
-representing a set of N registers as a list of length N
+/* representing a set of N registers as a list of length N
 [r1, r2, r3, rn] with N = 4
 
 representing a set of actions as a list of functors representing them
-e.g. [copy(1,2), swap(2,3)]
-*/
+e.g. [copy(1,2), swap(2,3)] */
 
 % implement action/3 for copy
 action(Registers, Action, ResultRegisters):-

@@ -1,10 +1,8 @@
-/* 
-Train paths are described as a list of stop/2 functors.
+/* Train paths are described as a list of stop/2 functors.
 Example query:
 
 ?- costBus([stop(leuven-station, 10), stop(leuven-city-center, 10), stop(heverlee, 4)], C).
-C = 18.
-*/
+C = 18. */
 
 distance(heverlee, leuven-city-center, 10).
 distance(leuven-station, leuven-city-center, 8).

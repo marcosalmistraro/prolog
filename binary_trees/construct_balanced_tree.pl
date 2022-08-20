@@ -1,6 +1,6 @@
-% constructing all balanced binary trees with a given number of nodes
-% a balanced tree is a tree where all left and right subtrees 
-% differ in length by at most 1
+/* constructing all balanced binary trees with a given number of nodes
+a balanced tree is a tree where all left and right subtrees 
+differ in length by at most 1 */
 
 cbal(1, t(nil, _, nil)).
 cbal(2, t(L, _, R)):-

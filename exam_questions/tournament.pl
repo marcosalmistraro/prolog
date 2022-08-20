@@ -8,12 +8,9 @@ beats(1, 4).
 beats(1, 5).
 beats(1, 6).
 beats(7, 1).
-beats(8, 1). 
-
-*/
+beats(8, 1). */
 
 % introducing info on a given set of games. 
-
 beats(1, 2).
 beats(3, 4).
 beats(1, 3).

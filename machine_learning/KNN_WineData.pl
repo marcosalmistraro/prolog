@@ -6,7 +6,7 @@ The system should specify whether the given bottle is from farmer 1, 2 or 3.
 As input, I am using numerical data for single bottles.
 These are lists with 13 numbers representing various properties of the single bottle. */
 
-/* Implement min_list and distance predicates */
+% Implement min_list and distance predicates
 
 min_list([A], A).
 min_list([A, B], A):- A < B.
@@ -28,7 +28,7 @@ distance([H1|T1], [H2|T2], Result):-
         distance(T1, T2, TmpResult2),
         Result is TmpResult1 + TmpResult2, !.
 
-/* Generate training lists with and withouth class (wine type) attribute */
+% Generate training lists with and withouth class (wine type) attribute
 
 get_train_list(TrainList):-
     findall([Vector, Class], traindata(Vector,Class), TrainList).
@@ -36,7 +36,7 @@ get_train_list(TrainList):-
 get_train_list_noclass(TrainList):-
     findall([Vector], traindata(Vector, _), TrainList).   
 
-/* Generate distances for combinations of given vector and all train vectors */
+% Generate distances for combinations of given vector and all train vectors
 
 generate_distances(Vector, ListDistances):-
     get_train_list_noclass(TrainList),
@@ -44,13 +44,13 @@ generate_distances(Vector, ListDistances):-
         (member([TrainVector], TrainList), distance(Vector, TrainVector, Dist)),
         ListDistances).
 
-/* Sort Distances to pick the first five */
+% Sort Distances to pick the first five
 
 sort_distances(Vector, SortedDistances):-
     generate_distances(Vector, ListDistances),
     sort(ListDistances, SortedDistances).
 
-/* Extract the classes for the first five neighbors */
+% Extract the classes for the first five neighbors
 
 extract_5NN_classes(Vector, NearestClasses):-
     get_train_list(TrainList),
@@ -80,7 +80,7 @@ classify_wine(Vector, Classification):-
     avg(Classes, AvgClass),
     Classification is round(AvgClass).
 
-/* Compute accuracy of the model by comparison with the test set */
+% Compute accuracy of the model by comparison with the test set
 
 model_accuracy(Accuracy):-
     findall(Farmer,
@@ -95,7 +95,7 @@ model_accuracy(Accuracy):-
     length(CorrectPredictions, AmountCorrectPred),
     Accuracy is AmountCorrectPred/AmountTotalPred.
 
-/* Train and test data is given below this line */
+% Train and test data is given below this line
 
 traindata([12.64, 1.36, 2.02, 16.8, 100, 2.02, 1.41, 0.53, 0.62, 5.75, 0.98, 1.59, 450],2).
 traindata([13.2, 1.78, 2.14, 11.2, 100, 2.65, 2.76, 0.26, 1.28, 4.38, 1.05, 3.4, 1050],1).

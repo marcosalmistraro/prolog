@@ -1,4 +1,4 @@
-/*  Using CLPFD to solve a CLP problem
+/* Using CLPFD to solve a CLP problem
     -- Domain values --
 
     1. monday           2. tuesday              3. wednesday    4. thursday     5. friday

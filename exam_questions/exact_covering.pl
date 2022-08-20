@@ -1,13 +1,10 @@
-/* 
-exact covering problem
+/* exact covering problem
 
 - items to be covered are represented as a list
 e.g. [a, b, c]
 
 - the set of options is a list of lists
-e.g. [[a, c], [e], [a, b]]
-
-*/
+e.g. [[a, c], [e], [a, b]] */
 
 isCovered(I, Os, O):-
     member(O, Os),
@@ -26,8 +23,7 @@ residual(I, Is, O, Os, ResIs, ResOs):-
 
 % make sure that no element in O is contained in any of the sublists in Os
 
-% -- flatten list of lists (Covering) --
-
+% flatten list of lists
 flatten_Os(Os, FlatOs):-
     findall(Element,
         (member(O, Os),
@@ -35,7 +31,6 @@ flatten_Os(Os, FlatOs):-
         FlatOs).
 
 % no_intersection predicate
-
 no_intersection([O], Os):-
     flatten_Os(Os, FlatOs),
     not(member(O, FlatOs)).
@@ -46,7 +41,6 @@ no_intersection([H|T], Os):-
     no_intersection_flat(T, FlatOs).
 
 % implement case when Os is already flattened
-
 no_intersection_flat([H], FlatOs):-
     not(member(H, FlatOs)).
 
@@ -55,7 +49,6 @@ no_intersection_flat([H|T], FlatOs):-
     no_intersection_flat(T, FlatOs).
 
 % implement recursive search for disjunct exact covering Os
-
 findexactcovering(Is, Os, [O]):-
     member(I, Is),
     isCovered(I, Os, O),
@@ -69,7 +62,6 @@ findexactcovering(Is, Os, [O|Covering]):-
     no_intersection(O, Covering).
 
 % only find unique covering solutions
-
 findallcoverings(Is, Os, Coverings):-
     setof(Covering,
         findexactcovering(Is, Os, Covering),

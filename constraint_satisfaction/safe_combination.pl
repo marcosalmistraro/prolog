@@ -2,10 +2,10 @@
 There are 9 digits in total, they are all different and all in the range 1..9.
 
 - The 1st digit is not 1, the 2nd digit is not 2, etc. 
-- The absolute difference between the 4th and the 6th digit is equal to the 7th digit. 
-- The product of the first three digits is equal to the sum of the last two digits. 
-- The sum of the 2nd, 3th and 6th digit is less than the 8th digit, 
-- The last digit is less than the 8th digit. 
+- The absolute difference between the 4th and the 6th digit is equal to the 7th digit
+- The product of the first three digits is equal to the sum of the last two digits
+- The sum of the 2nd, 3th and 6th digit is less than the 8th digit
+- The last digit is less than the 8th digit
 
 The program uses CLPFD in order to find the solution */
 

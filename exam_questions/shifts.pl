@@ -1,6 +1,4 @@
-/* 
-
--- representing consecutive working shifts by facts --
+/* -- representing consecutive working shifts by facts --
 
 shifts(Name, MinShifts, MaxShifts)
 e.g. shifts(Danny, 3, 7).

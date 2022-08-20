@@ -28,9 +28,3 @@ path(Start, End, CurrentPath, Path):-
     try_action(Start, Next),
     no_loop(Next, CurrentPath),
     path(Next, End, [Next|CurrentPath], Path).
-
-
-
-
-    
-    

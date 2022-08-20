@@ -26,8 +26,8 @@ generate_configuration(Queens, N):-
 	labeling([], Queens). 
 
 solve:- 
-	write("Enter the amount of desired queens: "), read(N),
-	write("N is set to: "), write(N), nl,
+	write('Enter the amount of desired queens: '), read(N),
+	write('N is set to: '), write(N), nl,
 	generate_configuration(Queens, N),
-	write("A possible solution to the puzzle is given below: "), nl,
+	write('A possible solution to the puzzle is given below: '), nl,
 	write(Queens).

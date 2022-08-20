@@ -26,7 +26,6 @@ path(Start, End, CurrentPath, Path):-
     path(Next, End, [Next|CurrentPath], Path).
 
 % predicate to identify all existing loops starting from a given node
-
 loop(Start, [Start|TmpPath]):-
     path(Start, Last, [Start], TmpPath),
     try_action(Last, Start).
@@ -39,7 +38,6 @@ findloops(Start, Loops):-
     listwrite(UniqueLoops).
 
 % eliminate variants, e.g. [b, f, c, b] for [b, c, f, b]
-
 no_variants([], []).
 no_variants([H|T], [H|NewLoops]):-
     invert_list(H, Variant),
@@ -50,6 +48,8 @@ no_variants([H|T], [H|NewLoops]):-
     invert_list(H, Variant),
     not(member(Variant, T)),
     no_variants(T, NewLoops).
+
+% helper predicates
 
 invert_list(List, Rev):- invert_list_acc(List, [], Rev).
 invert_list_acc([], Acc, Acc).
