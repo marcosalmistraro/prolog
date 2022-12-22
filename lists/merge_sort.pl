@@ -1,4 +1,4 @@
-% predicate outputting a sorted list obtained by merging two inputs
+% merge_sort predicate outputting a sorted list obtained by merging two inputs.
 
 sort_list([H], [H]).
 sort_list([H|T], [H|Res]):-

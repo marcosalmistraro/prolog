@@ -1,4 +1,4 @@
-/* Knight's Tour puzzle 
+/* Knight's Tour puzzle.
 
 How can a knight move around an empty chessboard and visit each of the squares exactly once? 
 
@@ -44,16 +44,16 @@ possible_move(Xs/Ys, CurrentPath, Xe/Ye):-
     \+(member(Xe/Ye, CurrentPath)).
 
 is_solution(CurrentPath):-
-    length(CurrentPath, 64). % set the final goal to covering the whole board
+    length(CurrentPath, 64). % Set the final goal to covering the whole board.
 
-/* tackling the problem with a simple generate-and-test approach is extremely slow.
+/* Tackling the problem with a simple generate-and-test approach is extremely slow.
 As an alternative, an heuristic evaluation can be implemented 
 for assessing wich action to take from a given position. 
 For each possible new position NewPos:
 
-- calculate the number of positions that NewPos can reach and that have not been visited yet.
-This number is referred to as the heuristic value of NewPos
-- always try out the new position with the smallest heuristic value first. */
+- The program calculates the number of positions that NewPos can reach and that have not been visited yet.
+This number is referred to as the heuristic value of NewPos.
+- The program always tries out the new position having the smallest heuristic value as a first option. */
 
 minimum_list([[A, B]], [A, B]).
 minimum_list([[A, B], [C, D]], Res):-
@@ -88,21 +88,21 @@ amount_possible_moves(CurrentPos, CurrentPath, Amount):-
     length(List, Amount).
 
 compute_heuristic(CurrentPos, CurrentPath, BestMove):-
-    % for every new position NextPos
+    % For every new position NextPos.
     findall(NextPos, possible_move(CurrentPos, CurrentPath, NextPos), NextPositions),
-    % calculate the number of positions that can be reached from there
-    % and collect the pairs (NextPos, PossibleActions) into FutureMoves
+    % Calculate the number of positions that can be reached from there
+    % and collect the pairs (NextPos, PossibleActions) into FutureMoves.
     findall([NextPos, Amount], 
         (member(NextPos, NextPositions),
         amount_possible_moves(NextPos, CurrentPath, Amount)),
         FutureMoves),
-    % sort the list and pick the action with the smallest number
+    % Sort the list and pick the action with the smallest number.
     sort_list(FutureMoves, SortedFutureMoves),
     SortedFutureMoves = [[BestMove, _]|_].
 
 solve(StartPos, Path):-
     valid_position(StartPos),
-    search([StartPos], Path), !. % only give one solution
+    search([StartPos], Path), !. % Only give one solution.
 
 search(CurrentPath, Path):-
     is_solution(CurrentPath),

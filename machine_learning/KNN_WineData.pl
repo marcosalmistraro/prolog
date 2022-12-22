@@ -6,7 +6,7 @@ The system should specify whether the given bottle is from farmer 1, 2 or 3.
 As input, I am using numerical data for single bottles.
 These are lists with 13 numbers representing various properties of the single bottle. */
 
-% Implement min_list and distance predicates
+% Implement min_list/2 and distance/3 predicates
 
 min_list([A], A).
 min_list([A, B], A):- A < B.
@@ -80,7 +80,7 @@ classify_wine(Vector, Classification):-
     avg(Classes, AvgClass),
     Classification is round(AvgClass).
 
-% Compute accuracy of the model by comparison with the test set
+% Compute accuracy of the model by comparison with the test set.
 
 model_accuracy(Accuracy):-
     findall(Farmer,

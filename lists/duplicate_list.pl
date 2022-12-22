@@ -1,4 +1,4 @@
-% duplicate the elements of a list a given number of times
+% Duplicate the elements of a list a given number of times.
 
 duplicate(1, [A], [A]).
 

@@ -1,4 +1,4 @@
-% extract a slice from a list, given indexes
+% Extract a slice from a list, given indexes.
 
 cut_from_head(N, List, Res):-
     append(TmpList, Res, List),

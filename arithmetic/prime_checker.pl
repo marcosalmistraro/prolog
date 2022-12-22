@@ -1,4 +1,4 @@
-/* determine whether a given integer number is prime */
+% Predicate to determine whether a given integer number is prime
 
 generate_numbers(3, [2]):- !.
 generate_numbers(N, [N1|Res]):-

@@ -1,4 +1,4 @@
-% rotate a given list by N places to the left
+% Predicate to rotate a given list by N places to the left
 
 rotateList(N, List, Res):-
     splitList(N, List, Res1, Res2),

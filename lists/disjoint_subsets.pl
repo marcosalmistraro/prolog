@@ -1,6 +1,6 @@
 /* In how many ways can a list of N items be subdivided 
 into 3 disjoint sublists of lengths L1, L2 and L3?
-The predicate generates all the possibilities via backtracking */
+The predicate generates all the possibilities via backtracking. */
 
 group(List, [L1, L2, L3], Res):-
     is_sublist(List1, List),

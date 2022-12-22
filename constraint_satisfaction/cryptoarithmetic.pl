@@ -1,8 +1,7 @@
 /* Cryptoarithmetic puzzle that solves the following equation
 D O N A L D +
 G E R A L D =
-R O B E R T
-*/
+R O B E R T */
 
 :- use_module(library(clpfd)).
 

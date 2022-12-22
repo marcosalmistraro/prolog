@@ -1,5 +1,5 @@
-/* write a predicate that outputs a given tree as a list
-containing, in the order: root, left subtree, rightsubtree */
+/* preorder/2 predicate outputting a given tree as a list.
+The list contains, in the order: root, left subtree, right subtree. */
 
 preorder(nil, []).
 preorder(L-Root+R, Res):-
@@ -8,7 +8,7 @@ preorder(L-Root+R, Res):-
     append(ListL, ListR, TmpRes),
     append(Root, TmpRes, Res).
 
-% do the same using difference lists
+% Implementing the same predicate using difference lists.
 
 preorder_dl(nil, L-L).
 preorder_dl(L-(L1-L2)+R, L1-L4):-

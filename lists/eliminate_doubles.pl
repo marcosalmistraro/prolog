@@ -1,4 +1,4 @@
-% eliminate consecutive duplicates of list elements
+% Eliminate consecutive duplicates of list elements
 
 eliminate([], []).
 eliminate([A], [A]).

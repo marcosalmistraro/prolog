@@ -1,4 +1,4 @@
-% in how many ways can a N-length sublist of a list be extracted?
+% In how many ways can a N-length sublist of a list be extracted?
 
 perm([], []).
 perm([H|T], Perm):-
@@ -17,7 +17,7 @@ extract(N, List, Res):-
     length(SubList, N),
     perm(SubList, Res).
 
-% only extract unique permutations of the N-length sublist
+% Only extract unique permutations of the N-length sublist.
 extract_all(N, List, ListSubs):-
     setof(SubList,
         extract(N, List, SubList),
