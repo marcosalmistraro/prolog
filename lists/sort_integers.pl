@@ -1,4 +1,4 @@
-% Sorting a list of integers.
+% Sorting a list of integers
 
 minimum_list([A], A).
 minimum_list([H|T], H):-

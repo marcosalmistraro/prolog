@@ -1,4 +1,4 @@
-% Predicate to find out whether a list is a palindrome.
+% palindrome_list/1 predicate to find out whether a list is a palindrome
 
 reverse_list([], []):- !.
 reverse_list([A], [A]):- !.

@@ -1,5 +1,6 @@
 /* This program computes the combination of an imaginary safe. 
-There are 9 digits in total; they are all different and all in the range 1..9.
+There are 9 digits in total; all of them are different and in the range 1..9.
+Moreover, they satisfy the following conditions.
 
 - The 1st digit is not 1, the 2nd digit is not 2, etc. 
 - The absolute difference between the 4th and the 6th digit is equal to the 7th digit.
@@ -7,7 +8,7 @@ There are 9 digits in total; they are all different and all in the range 1..9.
 - The sum of the 2nd, 3th and 6th digit is less than the 8th digit.
 - The last digit is less than the 8th digit.
 
-The program uses CLPFD in order to find a solution. */
+The program uses CLPFD in order to find a solution */
 
 :- use_module(library(clpfd)).
 

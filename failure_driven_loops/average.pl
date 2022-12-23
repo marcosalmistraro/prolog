@@ -1,4 +1,5 @@
-% example of implementation of failure_driven loops
+/* Example of implementation of failure-driven loops. 
+Computing the average of three integers */
 
 compute_average_3:-
     repeat,

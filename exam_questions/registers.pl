@@ -1,10 +1,10 @@
-/* representing a set of N registers as a list of length N
+/* Representing a set of N registers as a list of length N
 [r1, r2, r3, rn] with N = 4
 
-representing a set of actions as a list of functors representing them
+Representing a set of actions as a list of functors
 e.g. [copy(1,2), swap(2,3)] */
 
-% implement action/3 for copy
+% Implement action/3 for copy
 action(Registers, Action, ResultRegisters):-
     Action = copy(OriginIndex),
     valid_indexes_copy(OriginIndex, Registers),
@@ -12,7 +12,7 @@ action(Registers, Action, ResultRegisters):-
     get_target_index(OriginIndex, TargetIndex, Registers),
     assign_value(OriginValue, TargetIndex, Registers, ResultRegisters).
 
-% implement action/3 for swap
+% Implement action/3 for swap
 action(Registers, Action, ResultRegisters):-
     Action = swap(Index1, Index2),
     valid_indexes_swap(Index1, Index2, Registers),

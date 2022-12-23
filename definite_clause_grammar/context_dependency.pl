@@ -18,7 +18,7 @@ noun --> [mice].
 verb --> [scares].
 verb --> [hates].
 
-/* implementing context-dependency by adding arguments */
+% Implementing context-dependency by adding arguments
 
 cd_sentence(Number) --> cd_noun_phrase(Number), cd_verb_phrase(Number).
 

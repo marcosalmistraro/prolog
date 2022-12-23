@@ -1,9 +1,9 @@
-/* exact covering problem
+/* Exact covering problem
 
-- items to be covered are represented as a list
+Items to be covered are represented as a list
 e.g. [a, b, c]
 
-- the set of options is a list of lists
+The set of options is a list of lists
 e.g. [[a, c], [e], [a, b]] */
 
 isCovered(I, Os, O):-
@@ -11,7 +11,7 @@ isCovered(I, Os, O):-
     member(I, O).
 
 getResIs(Is, O, ResIs):-
-    % remove all I contained in O from Is to get ResIs
+    % Remove all I contained in O from Is to get ResIs
     findall(IToRemove, member(IToRemove, O), IsToRemove),
     findall(ResI, (member(ResI, Is), not(member(ResI, IsToRemove))), ResIs).
     
@@ -21,16 +21,16 @@ residual(I, Is, O, Os, ResIs, ResOs):-
     getResIs(Is, O, ResIs),
     select(O, Os, ResOs).
 
-% make sure that no element in O is contained in any of the sublists in Os
+% Make sure that no element in O is contained in any of the sublists in Os
 
-% flatten list of lists
+% Flatten list of lists
 flatten_Os(Os, FlatOs):-
     findall(Element,
         (member(O, Os),
         member(Element, O)),
         FlatOs).
 
-% no_intersection predicate
+% no_intersection/2 predicate
 no_intersection([O], Os):-
     flatten_Os(Os, FlatOs),
     not(member(O, FlatOs)).
@@ -40,7 +40,7 @@ no_intersection([H|T], Os):-
     not(member(H, FlatOs)),
     no_intersection_flat(T, FlatOs).
 
-% implement case when Os is already flattened
+% Implement case when Os is already flattened
 no_intersection_flat([H], FlatOs):-
     not(member(H, FlatOs)).
 
@@ -48,7 +48,7 @@ no_intersection_flat([H|T], FlatOs):-
     not(member(H, FlatOs)),
     no_intersection_flat(T, FlatOs).
 
-% implement recursive search for disjunct exact covering Os
+% Implement recursive search for disjunct exact covering Os
 findexactcovering(Is, Os, [O]):-
     member(I, Is),
     isCovered(I, Os, O),
@@ -61,7 +61,7 @@ findexactcovering(Is, Os, [O|Covering]):-
     findexactcovering(ResIs, ResOs, Covering),
     no_intersection(O, Covering).
 
-% only find unique covering solutions
+% Only find unique covering solutions
 findallcoverings(Is, Os, Coverings):-
     setof(Covering,
         findexactcovering(Is, Os, Covering),

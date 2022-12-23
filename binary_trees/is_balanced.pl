@@ -1,5 +1,12 @@
 /* is_balanced/1 predicate to verify whether a given binary tree is balanced.
-Balanced means that the depths of the left and right subtrees at any node differ by at most 1 */
+Balanced means that the depths of the left and right subtrees 
+at any node differ by at most 1 */
+
+depth(nil, 0).
+depth(t(L,_,R), Depth):-
+    depth(L, DepthL),
+    depth(R, DepthR),
+    Depth is max(DepthL, DepthR) + 1.
 
 is_balanced(nil).
 is_balanced(t(L, _, R)):-

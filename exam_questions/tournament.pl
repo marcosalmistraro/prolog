@@ -1,6 +1,6 @@
-/* modeling a single-round badminton tournament using Prolog
+/* Modeling a single-round badminton tournament using Prolog
 
-representing information on who beats who
+Representing information on who beats who
 
 beats(1, 2).
 beats(1, 3).
@@ -10,7 +10,7 @@ beats(1, 6).
 beats(7, 1).
 beats(8, 1). */
 
-% introducing info on a given set of games. 
+% Introducing info on a given set of games
 beats(1, 2).
 beats(3, 4).
 beats(1, 3).
@@ -18,7 +18,7 @@ beats(4, 1).
 beats(3, 2).
 beats(2, 4).
 
-% initial sequence is indicated as a list of N members
+% Initial sequence is indicated as a list of N members
 
 perm([], []).
 perm([H|T], Perm):-
@@ -45,6 +45,8 @@ onematch([H1, H2|T], [FirstWinner|Winners]):-
     beats(H2, H1),
     H2 = FirstWinner,
     onematch(T, Winners).
+
+% Implementing the structure of a tournament
 
 tournament([H1, H2], Winner):-
     onematch([H1, H2], Winner).

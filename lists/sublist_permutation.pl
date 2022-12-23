@@ -17,7 +17,7 @@ extract(N, List, Res):-
     length(SubList, N),
     perm(SubList, Res).
 
-% Only extract unique permutations of the N-length sublist.
+% Only extract unique permutations of the N-length sublist
 extract_all(N, List, ListSubs):-
     setof(SubList,
         extract(N, List, SubList),

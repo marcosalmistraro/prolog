@@ -1,4 +1,4 @@
-% defining the graph
+% Defining a graph
 arc(g, h).
 arc(k, f).
 arc(f, b).
@@ -25,7 +25,7 @@ path(Start, End, CurrentPath, Path):-
     no_loop(Next, CurrentPath),
     path(Next, End, [Next|CurrentPath], Path).
 
-% predicate to identify all existing loops starting from a given node
+% Predicate to identify all existing loops starting from a given node
 loop(Start, [Start|TmpPath]):-
     path(Start, Last, [Start], TmpPath),
     try_action(Last, Start).
@@ -37,7 +37,7 @@ findloops(Start, Loops):-
     no_variants(Loops, UniqueLoops),
     listwrite(UniqueLoops).
 
-% eliminate variants, e.g. [b, f, c, b] for [b, c, f, b]
+% Eiminate variants, e.g. [b, f, c, b] for [b, c, f, b]
 no_variants([], []).
 no_variants([H|T], [H|NewLoops]):-
     invert_list(H, Variant),
@@ -49,7 +49,7 @@ no_variants([H|T], [H|NewLoops]):-
     not(member(Variant, T)),
     no_variants(T, NewLoops).
 
-% helper predicates
+% Helper predicates
 
 invert_list(List, Rev):- invert_list_acc(List, [], Rev).
 invert_list_acc([], Acc, Acc).

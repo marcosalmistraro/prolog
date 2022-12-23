@@ -1,6 +1,7 @@
 /* Graph Problem - Missionaries and cannibals
 
-The adopted implementation follows the pattern explained below to traverse the different states
+The adopted implementation follows the pattern explained below 
+to traverse the different states.
 
 solve(InitialState, Path):-
     search(InitialState, [InitialState], Path).
@@ -15,10 +16,10 @@ search(CurrentState, CurrentPath, Path):-
     no_loop(NextState, CurrentPath),
     search(NextState, [NextState|CurrentPath], Path).
 
-3 missionaries and 3 cannibals are walking together through the forest. 
-They arrive at a river they have to cross, but there is only one boat, which can carry at most 2 people. 
+Three missionaries and three cannibals are walking together through the forest. 
+They arrive at a river that they have to cross. However, there is only one boat: it can carry at most 2 people. 
 For the boat to cross the river, there should be at least one person in the boat. 
-The issue is that if there are more cannibals than missionaries at any place, those will eat the missionaries. */
+The issue is that if at any location there are more cannibals than missionaries, those will eat the missionaries. */
 
 initial_state([[m,m,m,c,c,c], []]).
 

@@ -1,4 +1,4 @@
-/* flattening a tree using difference lists */
+% Flattening a binary tree using difference lists
 
 flatten_tree_dl(nil, L-L).
 flatten_tree_dl(t(L, X, R), L3-L1):-

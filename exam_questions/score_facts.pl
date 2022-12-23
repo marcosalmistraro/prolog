@@ -1,4 +1,4 @@
-% Example exam exercise - represent information using prolog predicates
+% Representing information as Prolog facts
 
 score(fai, johan, 20).
 score(plpm, johan, 15).

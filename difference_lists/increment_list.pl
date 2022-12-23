@@ -1,4 +1,4 @@
-/* incrementing every element of a list using difference lists */
+% Incrementing every element of a list using difference lists
 
 increment_dl([], T-T).
 increment_dl([X], [Res|T]-T):-

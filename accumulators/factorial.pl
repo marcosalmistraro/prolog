@@ -1,3 +1,5 @@
+% Calculating the factorial of a given integer
+
 factorial(N, Fact):- fact_acc(N, 1, Fact).
 
 fact_acc(1, Fact, Fact).

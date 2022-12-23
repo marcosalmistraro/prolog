@@ -1,5 +1,5 @@
-/* the following program parses a given sentence.
-The sentence must indicate a number between 0 and 999 in English
+/* The following DCG program parses input sentences indicating
+a number between 0 and 999 in English.
 
 example query: ?- sentence(Converted, [one, hundred, thirty, nine], []). */
 

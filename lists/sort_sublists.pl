@@ -1,4 +1,4 @@
-% Sorting a list of lists according to sublist length.
+% Sorting a list of lists according to sublist length
 
 shortest_list([A], A).
 shortest_list([H|T], H):-

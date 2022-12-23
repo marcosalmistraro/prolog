@@ -1,6 +1,6 @@
 /* The following is an implementation of the N-queens puzzle. 
 A solution is provided for any given N integer number of queens.
-It is assumed that queens are placed at consecutive, different row numbers. */
+It is assumed that queens are placed at consecutive, different row numbers */
 
 :- use_module(library(clpfd)).
 

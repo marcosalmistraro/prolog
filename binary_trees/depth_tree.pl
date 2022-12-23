@@ -1,3 +1,5 @@
+% Retrieving the depth of a binary tree
+
 depth(nil, 0).
 depth(t(L,_,R), Depth):-
     depth(L, DepthL),

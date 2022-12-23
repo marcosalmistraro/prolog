@@ -1,6 +1,7 @@
-/* Train paths are described as a list of stop/2 functors.
-Example query:
+/* Program to manage train trips.
+Train paths are described as a list of stop/2 functors.
 
+Example query:
 ?- costBus([stop(leuven-station, 10), stop(leuven-city-center, 10), stop(heverlee, 4)], C).
 C = 18. */
 

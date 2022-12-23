@@ -1,4 +1,4 @@
-/* flattening a list by using difference lists */
+% Flattening a list by using difference lists
 
 flatten_dl([], L-L).
 flatten_dl(X, [X|L]-L):-

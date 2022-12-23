@@ -1,4 +1,4 @@
-% another example of implementation of failure_driven loops
+% Creating a list of three elements by using failure-driven loops
 
 create_list:-
     repeat,

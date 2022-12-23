@@ -1,7 +1,7 @@
 /* Describing items by prolog facts and terms
 
-item(Name, Weight, Value) -- this is done by means of a /3 functor
-name/weight/value --- this is an atom */
+item(Name, Weight, Value)   this is done by means of a /3 functor
+name/weight/value           this is an atom */
 
 % -- FACTS --
 item(ax, 50, 40).
@@ -10,8 +10,8 @@ item(box, 10, 5).
 item(laptop, 99, 60).
 % item(monitor, 70, 60).
 
-/* -- TERMS --
-[ax/50/40, book/50/50, box/10/5, laptop/99/60] */
+% -- TERMS --
+% [ax/50/40, book/50/50, box/10/5, laptop/99/60]
 
 is_subset([], []).
 is_subset([H|T1], [H|T2]):-
@@ -62,7 +62,7 @@ find_highest_value(HighestValue, Items):-
     Values),
     max_list(Values, HighestValue).
 
-% predicate highest/1 to find the list whith all items having the highest value
+% Predicate highest/1 to find the list whith all items having the highest value
 highest(List):-
     find_all_items(Items),
     find_highest_value(HighestValue, Items),

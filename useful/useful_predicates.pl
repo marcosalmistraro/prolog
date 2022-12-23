@@ -1,3 +1,5 @@
+% Reimplementing several Prolog predicates from scratch
+
 my_append([], X, X).
 my_append([H1|T1], L2, [H1|Res]):-
     my_append(T1, L2, Res).

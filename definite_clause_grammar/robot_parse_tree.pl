@@ -1,4 +1,4 @@
-/* parsing the moves of a robot using DCG */
+% Parsing the moves of a robot using DCG
 
 move(move(Step)) --> step(Step).
 move(move(Step, Move)) --> step(Step), move(Move).
@@ -6,7 +6,7 @@ move(move(Step, Move)) --> step(Step), move(Move).
 step(step(up)) --> [up].
 step(step(down)) --> [down].
 
-/* computing distances covered by the robot */
+% Computing the distance covered by the robot 
 
 meaning(move(Step, Move), Dist):-
     meaning(Step, D1),
@@ -19,7 +19,7 @@ meaning(move(Step), Dist):-
 meaning(step(up), 1).
 meaning(step(down), -1).
 
-/* Example query. In this case we need to create the parse tree and use it
-as an argument in the query. Collapsed DCG are easier to read and implement.
+/* Example query. In this case a parse tree is needed and used
+as an argument. In general collapsed DCG is easier to read and implement.
 
 ?- move(T,['up', 'down', 'up'],[]),meaning(T, Dist).*/

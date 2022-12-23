@@ -17,26 +17,26 @@ swim:-
     all_different([C1, C2, C3, C4, C5]),
     all_different([P1, P2, P3, P4, P5]),
 
-    % hint 1
+    % Hint 1
     N2 #= S2, 
     N2 #\= C1,
     (C2 #= P1; C2 #= P2; C2 #= P3),
     N2 #= C2 - 1,
-    % hint 2
+    % Hint 2
     N3 #\= S3, N3 #= 1,
-    % hint 3
+    % Hint 3
     (P1 #= 2; P2 #= 2; P3 #= 2),
     (P1 #= C3; P2 #= C3; P3 #= C3),
     (P1 #= N4; P2 #= N4; P3 #= N4),
     N4 #\= S4,
     C3 #\= 2, C3 #\= N4, N4 #\= 2,
-    % hint 4
+    % Hint 4
     N2 #= S5 - 1,
     N2 #= C5 + 2,
-    % hint 5
+    % Hint 5
     N5 #\= S5,
     (S3 #= P4; S3 #= P5),
-    % hint 6
+    % Hint 6
     (C4 #= P4; C4 #= P5),
     all_different([S3, N5, C4, S4]),
     S3 #\= 5, N5 #\= 5, S4 #\= 5, C4 #\= 5,

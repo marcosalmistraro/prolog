@@ -1,4 +1,4 @@
-% defining the graph
+% Defining a graph
 arc(g, h).
 arc(k, f).
 arc(f, b).
@@ -18,7 +18,7 @@ is_solution(Node, Node).
 no_loop(Node, CurrentPath):-
     not(member(Node, CurrentPath)).
 
-% predicate to identify all acyclic paths from a starting node to a terminal one
+% Predicate to identify all acyclic paths from a starting node to a terminal one
 
 path(Start, End, CurrentPath, Path):-
     is_solution(Start, End),

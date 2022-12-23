@@ -1,4 +1,4 @@
-/* inverting a list using difference lists */
+% Inverting a list using difference lists
 
 invert_dl([], L-L).
 invert_dl([X], [X|L]-L).

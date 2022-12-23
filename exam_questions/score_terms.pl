@@ -1,4 +1,4 @@
-% Example exam exercise - represent information using prolog terms
+% Representing information as Prolog terms
 
 max_score_list([[MaxName, MaxScore]], [MaxName, MaxScore]).
 max_score_list([[HName, HScore]|T], [HName, HScore]):-

@@ -1,3 +1,5 @@
+% Retrieving the length of a given list
+
 length_list(List, Length):- length_acc(List, 0, Length).
 
 length_acc([], Length, Length).

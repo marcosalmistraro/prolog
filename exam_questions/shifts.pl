@@ -1,13 +1,9 @@
-/* -- representing consecutive working shifts by facts --
+/* Representing consecutive work shifts both as facts and terms
 
-shifts(Name, MinShifts, MaxShifts)
-e.g. shifts(Danny, 3, 7).
+shifts(Name, MinShifts, MaxShifts)      this is a Prolog fact
+danny/3/7                               this is an atom */
 
--- representing shifts by terms --
-
-danny/3/7 */
-
-% using prolog facts to define possible/2
+% Using prolog facts to define possible/2
 
 shifts(danny, 3, 7).
 shifts(jef, 2, 2).
@@ -66,7 +62,7 @@ possible(Workers, NumberShifts):-
     odd_smaller(ListMins, MinRequiredShifts),
     odd_greater(ListMaxs, MaxRequiredShits).
     
-% using prolog terms to define possible/2
+% Using prolog terms to define possible/2
 
 possible_term(Workers, NumberShifts):-
     is_even(NumberShifts),

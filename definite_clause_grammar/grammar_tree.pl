@@ -1,4 +1,4 @@
-/* parsing English sentences using DCG trees */
+/* Parsing English sentences using DCG trees */
 
 sentence(Number, sentence(NP, VP)) --> 
     noun_phrase(Number, NP), 

@@ -1,10 +1,10 @@
 /* Classification Problem - Wine bottles 
 
 Data is given about bottles of wine from three different farmers. 
-The aim is to build a system that classifies bottles of wine by learning from the train data.
-The system should specify whether the given bottle is from farmer 1, 2 or 3. 
-As input, I am using numerical data for single bottles.
-These are lists with 13 numbers representing various properties of the single bottle. */
+The aim is to build a system that classifies bottles of wine by learning from the training data.
+The system should yield whether a given bottle is from farmer 1, 2 or 3. 
+As input, numerical data for single bottles is used. This consists of 
+lists containing various numerical properties for each single bottle */
 
 % Implement min_list/2 and distance/3 predicates
 
@@ -44,13 +44,13 @@ generate_distances(Vector, ListDistances):-
         (member([TrainVector], TrainList), distance(Vector, TrainVector, Dist)),
         ListDistances).
 
-% Sort Distances to pick the first five
+% Sort distances to pick the first five
 
 sort_distances(Vector, SortedDistances):-
     generate_distances(Vector, ListDistances),
     sort(ListDistances, SortedDistances).
 
-% Extract the classes for the first five neighbors
+% Extract classes for the first five neighbors
 
 extract_5NN_classes(Vector, NearestClasses):-
     get_train_list(TrainList),
@@ -80,7 +80,7 @@ classify_wine(Vector, Classification):-
     avg(Classes, AvgClass),
     Classification is round(AvgClass).
 
-% Compute accuracy of the model by comparison with the test set.
+% Compute accuracy of the model by comparison with the test set
 
 model_accuracy(Accuracy):-
     findall(Farmer,

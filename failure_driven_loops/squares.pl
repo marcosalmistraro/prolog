@@ -1,4 +1,4 @@
-% compute square of an
+% Computing squares using failure-driven loops
 
 do_squares:-
     repeat,

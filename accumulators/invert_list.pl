@@ -1,3 +1,5 @@
+% Inverting the order of items within a given list
+
 invert_list(List, Reversed):- invert_list_acc(List, [], Reversed).
 
 invert_list_acc([], Reversed, Reversed).

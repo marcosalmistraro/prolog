@@ -1,27 +1,13 @@
 /* Water jugs Problem
 
-The adopted implementation follows the pattern explained below to traverse the different states
-
-solve(InitialState, Path):-
-    search(InitialState, [InitialState], Path).
-
-search(CurrentState, CurrentPath, Path)
-    is_solution(CurrentState),
-    Path = CurrentPath.
-
-search(CurrentState, CurrentPath, Path):-
-    try_action(CurrenState, NextState),
-    validate_state(NextState),
-    no_loop(NextState, CurrentPath),
-    search(NextState, [NextState|CurrentPath], Path).
-
 You need to get 8 liter of water from a river. 
 You only have a 15-liter jug and a 16-liter jug. 
 How can you obtain 8 liter using only these two jugs?
 Possible operations are: 
-- emptying a jug entirely
-- filling a jug entirely
-- emptying one jug into the other
+
+- Emptying a jug entirely
+- Filling a jug entirely
+- Emptying one jug into the other
 
 The program computes the shortest solution. */
 

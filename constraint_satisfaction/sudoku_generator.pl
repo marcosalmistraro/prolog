@@ -1,4 +1,4 @@
-/* The following program generates all possible solutions for a 4X4 Sudoku puzzle. */
+% The following program generates all possible solutions for a 4X4 Sudoku puzzle
 
 :- use_module(library(clpfd)).
 

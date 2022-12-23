@@ -1,7 +1,7 @@
-/* example of collapsed DCG program, where the meaning
+/* Example of collapsed DCG program, where the meaning
 is interleaved with the syntax for faster and easier development.
 In this case the behaviour of a basic robot is simulated. 
-Then, the cumulative meaning of the available moves can be read by querying, e.g.,
+The cumulative meaning of the available moves can be read by querying, e.g.,
 
 ?- move(D, [up, down, down, down, up], []). */
 

@@ -1,4 +1,4 @@
-% Using reification to count occurrencies of an element within a list
+% Using reification to count how many times an element occurs within a list
 
 :- use_module(library(clpfd)).
 
