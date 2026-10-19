@@ -1,9 +1,6 @@
 # Prolog
 
-![Prolog](https://img.shields.io/badge/Language-Prolog-74283C)
 ![SWI-Prolog](https://img.shields.io/badge/SWI--Prolog-E09A00)
-![Paradigm](https://img.shields.io/badge/Paradigm-Logic%20Programming-1f6feb)
-![Coursework](https://img.shields.io/badge/Coursework-KU%20Leuven-005b99)
 
 A collection of Prolog programs written during the **Programming Languages and Methodologies** course
 of my Advanced Master's in Artificial Intelligence at KU Leuven.
