@@ -1,6 +1,7 @@
 # Prolog
 
 ![SWI-Prolog](https://img.shields.io/badge/SWI--Prolog-E09A00)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./License)
 
 A collection of Prolog programs written during the **Programming Languages and Methodologies** course
 of my Advanced Master's in Artificial Intelligence at KU Leuven.
@@ -48,3 +49,7 @@ generate-and-test, heuristic functions, list manipulation, reification.
 ## Notes
 
 This is learning material, written as coursework. The code favours clarity over performance.
+
+## License
+
+This project is licensed under the MIT License. See the [License](./License) file for details.
